@@ -177,9 +177,10 @@ input[type="range"] {
 }
 
 .panel--timeline {
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1rem;
+  right: 1rem;
+  left: auto;
+  transform: none;
   width: min(900px, 92vw);
 }
 
