@@ -1,0 +1,53 @@
+{
+  "campaigns": [
+    {
+      "id": "morea_demo",
+      "title": "Morea Consolidation (Demo)",
+      "timeSpanLabel": "1429–1430",
+      "clips": [
+        {
+          "id": "c1",
+          "label": "Column departs Glarentza",
+          "t0": 0,
+          "t1": 14,
+          "routeId": "glarentza_to_corinth",
+          "unitId": "byz_column_1",
+          "camera": { "mode": "follow", "zoom": 7.1, "pitch": 35, "bearing": -10 },
+          "events": [
+            { "at": 2.5, "type": "label", "text": "Departure at dawn" },
+            { "at": 8.5, "type": "battle", "coords": [22.05, 37.78], "text": "Skirmish at the pass" }
+          ]
+        },
+        {
+          "id": "c2",
+          "label": "Siege lines at Corinth",
+          "t0": 14,
+          "t1": 24,
+          "routeId": "glarentza_to_corinth",
+          "unitId": "byz_column_1",
+          "camera": { "mode": "wide" },
+          "events": [
+            { "at": 16.0, "type": "siege", "coords": [22.929, 37.94], "text": "Siegeworks rise" }
+          ]
+        },
+        {
+          "id": "c3",
+          "label": "Venetian counter-raid",
+          "t0": 24,
+          "t1": 40,
+          "routeId": "nauplio_to_coron",
+          "unitId": "ven_raid_1",
+          "camera": { "mode": "follow", "zoom": 7.0, "pitch": 25, "bearing": 20 },
+          "events": [
+            { "at": 27.5, "type": "label", "text": "Sails sighted off the headland" },
+            { "at": 34.0, "type": "battle", "coords": [22.113, 37.039], "text": "Clash at the river" }
+          ]
+        }
+      ],
+      "units": [
+        { "id": "byz_column_1", "name": "Tagmata Column", "banner": "assets/img/banners/byz.svg", "size": 0.18 },
+        { "id": "ven_raid_1", "name": "Venetian Raiders", "banner": "assets/img/banners/venice.svg", "size": 0.18 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [21.284, 37.915],
+          [21.55, 37.88],
+          [22.05, 37.78],
+          [22.45, 37.74],
+          [22.929, 37.94]
+        ]
+      },
+      "properties": {
+        "id": "glarentza_to_corinth",
+        "name": "Glarentza to Corinth",
+        "faction": "Byzantium",
+        "kind": "march",
+        "defaultColor": "#c9a85b"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [22.795, 37.569],
+          [22.45, 37.3],
+          [22.113, 37.039],
+          [21.956, 36.793]
+        ]
+      },
+      "properties": {
+        "id": "nauplio_to_coron",
+        "name": "Nauplio to Coron",
+        "faction": "Venice",
+        "kind": "raid",
+        "defaultColor": "#5bb5c9"
+      }
+    }
+  ]
+}

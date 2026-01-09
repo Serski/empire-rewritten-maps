@@ -1,0 +1,102 @@
+[
+  {
+    "id": "glarentza",
+    "name": "Glarentza",
+    "coords": [21.284, 37.915],
+    "type": "port",
+    "faction": "Byzantium",
+    "tags": ["harbor", "trade"],
+    "codex": "A bristling port where banners of the Despotate mix with visiting galleys.",
+    "chapters": [3, 7, 12]
+  },
+  {
+    "id": "patras",
+    "name": "Patras",
+    "coords": [21.735, 38.246],
+    "type": "city",
+    "faction": "Latin",
+    "tags": ["cathedral", "market"],
+    "codex": "A western shore city watched by a restless garrison and a wary clergy.",
+    "chapters": [8, 19]
+  },
+  {
+    "id": "corinth",
+    "name": "Corinth",
+    "coords": [22.929, 37.94],
+    "type": "fortress",
+    "faction": "Byzantium",
+    "tags": ["pass", "fortress"],
+    "codex": "The Hexamilion gate, the hinge of the Isthmus, sealed with new stone.",
+    "chapters": [10, 21, 32]
+  },
+  {
+    "id": "argos",
+    "name": "Argos",
+    "coords": [22.724, 37.633],
+    "type": "town",
+    "faction": "Venice",
+    "tags": ["plain", "farms"],
+    "codex": "A fertile plain framed by old walls and a new Venetian watch.",
+    "chapters": [16, 28]
+  },
+  {
+    "id": "nauplio",
+    "name": "Nauplio",
+    "coords": [22.795, 37.569],
+    "type": "port",
+    "faction": "Venice",
+    "tags": ["harbor", "arsenal"],
+    "codex": "A deep harbor with shipwrights hammering beneath crimson sails.",
+    "chapters": [14, 29]
+  },
+  {
+    "id": "mystras",
+    "name": "Mystras",
+    "coords": [22.369, 37.076],
+    "type": "city",
+    "faction": "Byzantium",
+    "tags": ["fortress", "capital"],
+    "codex": "A hard city of stone above the Eurotas, crowned with a palace.",
+    "chapters": [12, 28, 43]
+  },
+  {
+    "id": "monemvasia",
+    "name": "Monemvasia",
+    "coords": [23.058, 36.689],
+    "type": "fortress",
+    "faction": "Byzantium",
+    "tags": ["rock", "citadel"],
+    "codex": "A lone rock of fortresses, chained to the sea by a thin causeway.",
+    "chapters": [22, 36]
+  },
+  {
+    "id": "kalamata",
+    "name": "Kalamata",
+    "coords": [22.113, 37.039],
+    "type": "town",
+    "faction": "Byzantium",
+    "tags": ["river", "mills"],
+    "codex": "River fog and olive mills surround the town’s quiet stockades.",
+    "chapters": [18, 27]
+  },
+  {
+    "id": "modon",
+    "name": "Modon",
+    "coords": [21.708, 36.831],
+    "type": "port",
+    "faction": "Venice",
+    "tags": ["fortress", "fleet"],
+    "codex": "The Venetian lion guards the quays and the long walls.",
+    "chapters": [24, 37]
+  },
+  {
+    "id": "coron",
+    "name": "Coron",
+    "coords": [21.956, 36.793],
+    "type": "port",
+    "faction": "Venice",
+    "tags": ["fortress", "market"],
+    "codex": "Capes and coves shelter the Venetian anchorage at Coron.",
+    "chapters": [25, 38]
+  }
+]
