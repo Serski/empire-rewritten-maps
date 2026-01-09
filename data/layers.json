@@ -3,6 +3,7 @@
     { "id": "terrain", "label": "Terrain", "default": true },
     { "id": "rivers", "label": "Rivers", "default": true },
     { "id": "borders", "label": "Borders", "default": true },
+    { "id": "kingdoms", "label": "Kingdoms", "default": true },
     { "id": "routes", "label": "Routes", "default": true },
     { "id": "pins", "label": "Place Pins", "default": true },
     { "id": "labels", "label": "Labels", "default": true },

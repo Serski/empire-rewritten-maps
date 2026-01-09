@@ -1,5 +1,5 @@
 const CONFIG = {
-  MAPTILER_KEY: '',
+  MAPTILER_KEY: 'YOUR_KEY_HERE',
   DEFAULT_CENTER: [22.4, 37.3],
   DEFAULT_ZOOM: 6.6,
   STYLE_URLS: {
@@ -150,6 +150,14 @@ const buildFogGeoJson = (center) => {
   };
 };
 
+const loadKingdomsGeoJson = async () => {
+  const response = await fetch('data/kingdoms.geojson');
+  if (!response.ok) {
+    throw new Error('Failed to load kingdoms data.');
+  }
+  return response.json();
+};
+
 const initMap = async () => {
   try {
     const data = await DataLoader.loadAll();
@@ -172,6 +180,7 @@ const initMap = async () => {
       setupBaseLayers(map);
       addCustomLayers(map);
       setupUI(map);
+      enableTimelineDrag();
       setupPlayer(map);
     });
 
@@ -216,6 +225,54 @@ const addCustomLayers = (map) => {
   map.addSource('borders', { type: 'geojson', data: buildBordersGeoJson() });
   map.addSource('front-line', { type: 'geojson', data: buildFrontLineGeoJson() });
   map.addSource('fog', { type: 'geojson', data: buildFogGeoJson(CONFIG.DEFAULT_CENTER) });
+
+  loadKingdomsGeoJson()
+    .then((kingdomsGeoJson) => {
+      map.addSource('kingdoms', { type: 'geojson', data: kingdomsGeoJson });
+
+      map.addLayer({
+        id: 'kingdom-fills',
+        type: 'fill',
+        source: 'kingdoms',
+        paint: {
+          'fill-color': [
+            'match',
+            ['get', 'id'],
+            'byzantium',
+            '#006400',
+            'frankish',
+            '#8B4513',
+            'bulgar',
+            '#1f4e8c',
+            '#888888'
+          ],
+          'fill-opacity': 0.3
+        }
+      });
+
+      map.addLayer({
+        id: 'kingdom-borders',
+        type: 'line',
+        source: 'kingdoms',
+        paint: {
+          'line-color': [
+            'match',
+            ['get', 'id'],
+            'byzantium',
+            '#006400',
+            'frankish',
+            '#8B4513',
+            'bulgar',
+            '#1f4e8c',
+            '#888888'
+          ],
+          'line-width': 2
+        }
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
   map.addLayer({
     id: 'routes-glow',
@@ -428,6 +485,9 @@ const setupUI = (map) => {
         (state.baseLayerGroups.labels || []).forEach((id) => map.setLayoutProperty(id, 'visibility', visible));
       } else if (layer === 'borders') {
         map.setLayoutProperty('border-lines', 'visibility', visible);
+      } else if (layer === 'kingdoms') {
+        map.setLayoutProperty('kingdom-fills', 'visibility', visible);
+        map.setLayoutProperty('kingdom-borders', 'visibility', visible);
       } else if (layer === 'fog') {
         map.setLayoutProperty('fog-layer', 'visibility', visible);
         state.fogEnabled = checkbox.checked;
@@ -469,6 +529,33 @@ const setupUI = (map) => {
     if (!results.contains(event.target) && event.target !== searchInput) {
       results.style.display = 'none';
     }
+  });
+};
+
+const enableTimelineDrag = () => {
+  const timelinePanel = document.querySelector('.panel--timeline');
+  if (!timelinePanel) return;
+  let dragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  timelinePanel.addEventListener('mousedown', (event) => {
+    dragging = true;
+    offsetX = event.clientX - timelinePanel.offsetLeft;
+    offsetY = event.clientY - timelinePanel.offsetTop;
+  });
+
+  document.addEventListener('mousemove', (event) => {
+    if (!dragging) return;
+    timelinePanel.style.left = `${event.clientX - offsetX}px`;
+    timelinePanel.style.top = `${event.clientY - offsetY}px`;
+    timelinePanel.style.right = 'auto';
+    timelinePanel.style.bottom = 'auto';
+    timelinePanel.style.transform = 'none';
+  });
+
+  document.addEventListener('mouseup', () => {
+    dragging = false;
   });
 };
 
