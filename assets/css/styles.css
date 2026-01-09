@@ -178,8 +178,8 @@ input[type="range"] {
 
 .panel--timeline {
   bottom: 1rem;
-  right: 1rem;
-  left: auto;
+  left: 1rem;
+  right: auto;
   transform: none;
   width: min(900px, 92vw);
 }
